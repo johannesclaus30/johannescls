@@ -122,7 +122,7 @@
             .navbar-collapse {
                 overflow: visible;
             }
-            /* Carousel caption styles (original for normal screens) */
+            /* Carousel caption styles */
             .carousel-inner {
                 overflow: visible; /* Prevent caption clipping */
             }
@@ -144,24 +144,45 @@
                 overflow-wrap: break-word; /* Ensure long words wrap */
             }
             .carousel-caption p,
-            .carousel-caption h2 {
+            .carousel-caption h1,
+            .carousel-caption h2,
+            .carousel-caption h4 {
                 white-space: normal;
                 word-wrap: break-word;
                 margin: 0 auto;
                 color: #fff;
             }
-            .carousel-caption p.lead {
-                font-size: 18px;
+            .carousel-caption p.lead,
+            .carousel-caption h2.lead,
+            .carousel-caption h4.lead {
+                font-size: 25px; /* Larger for normal screens */
                 line-height: 1.4;
             }
-            .carousel-caption h2 {
-                font-size: 36px;
+            .carousel-caption h1 {
+                font-size: 50px; /* Larger for normal screens */
                 line-height: 1.2;
                 font-weight: bold;
                 text-transform: uppercase;
             }
-            /* Adjustments for very small screens only */
-            @media (max-width: 576px) {
+            .carousel-caption h2 {
+                font-size: 25px; /* Align with lead for normal screens */
+                line-height: 1.4;
+                font-weight: normal;
+                margin-top: 10px;
+            }
+            .carousel-caption h4 {
+                font-size: 25px; /* Align with lead for normal screens */
+                line-height: 1.4;
+                font-weight: normal;
+                margin-top: 10px;
+            }
+            /* Hide specific elements on small screens */
+            .carousel-caption p.hide-on-small,
+            .carousel-caption h2.hide-on-small,
+            .carousel-caption h4.hide-on-small {
+                display: block;
+            }
+            @media (max-width: 950px) {
                 .carousel-inner img {
                     min-height: 180px; /* Slightly smaller for mobile */
                 }
@@ -169,13 +190,28 @@
                     width: 100%;
                     padding: 6px;
                 }
-                .carousel-caption p.lead {
+                .carousel-caption p.lead,
+                .carousel-caption h2.lead,
+                .carousel-caption h4.lead {
                     font-size: 12px;
                     line-height: 1.6;
                 }
-                .carousel-caption h2 {
+                .carousel-caption h1 {
                     font-size: 16px;
                     line-height: 1.4;
+                }
+                .carousel-caption h2 {
+                    font-size: 12px;
+                    line-height: 1.6;
+                }
+                .carousel-caption h4 {
+                    font-size: 12px;
+                    line-height: 1.6;
+                }
+                .carousel-caption p.hide-on-small,
+                .carousel-caption h2.hide-on-small,
+                .carousel-caption h4.hide-on-small {
+                    display: none; /* Hide specified elements on small screens */
                 }
                 /* Remove column offsets and constraints */
                 .carousel-caption .col-md-10,
@@ -188,21 +224,31 @@
                     text-align: center;
                 }
             }
-            @media (max-width: 400px) {
+            @media (max-width: 700px) {
                 .carousel-caption {
                     width: 100%;
                     padding: 5px;
                 }
-                .carousel-caption p.lead {
+                .carousel-caption p.lead,
+                .carousel-caption h2.lead,
+                .carousel-caption h4.lead {
                     font-size: 10px;
                     line-height: 1.6;
                 }
-                .carousel-caption h2 {
+                .carousel-caption h1 {
                     font-size: 14px;
                     line-height: 1.5;
                 }
+                .carousel-caption h2 {
+                    font-size: 10px;
+                    line-height: 1.6;
+                }
+                .carousel-caption h4 {
+                    font-size: 10px;
+                    line-height: 1.6;
+                }
             }
-            @media (min-width: 576px) {
+            @media (min-width: 800px) {
                 .carousel-inner img {
                     min-height: 300px; /* Larger height for normal screens */
                 }
@@ -232,7 +278,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand">
                     <img src="otherImg/name_logo_navbar.png" alt="" class="px-4">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-shock-absorber-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </a>
@@ -274,13 +320,19 @@
                             <p class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap">
                                 Hey there, I am
                             </p>
-                            <h2 class="text-white animate__animated animate__slideInDown animate__delay-1s text-uppercase text-wrap fs-2">
+                            <h1 class="text-white animate__animated animate__slideInDown animate__delay-1s text-uppercase text-wrap">
                                 Johannes Emmanuel A. Claus
+                            </h1>
+                            <h2 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small">
+                                Click the button
                             </h2>
+                            <h4 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small">
+                                Discover more about me!
+                            </h4>
                         </div>
                     </div>
                     <picture>
-                        <source media="(max-width: 768px)" srcset="imgSlider/slideMain_sd.jpg">
+                        <source media="(max-width: 1000px)" srcset="imgSlider/slideMain_sd.jpg">
                         <img src="imgSlider/slideMain_md.jpg" alt="Photo 1" class="d-block" style="width:100%">
                     </picture>
                 </div>
@@ -349,22 +401,40 @@
                 return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
             }
             window.addEventListener("scroll", function () {
-                const heading = document.querySelector("h2");
-                const paragraph = document.querySelector("p");
-                if (isInViewport(heading)) {
+                const heading = document.querySelector(".carousel-caption h1");
+                const subheading = document.querySelector(".carousel-caption h4");
+                const secondaryHeading = document.querySelector(".carousel-caption h2");
+                const paragraphs = document.querySelectorAll(".carousel-caption p");
+                if (heading && isInViewport(heading)) {
                     heading.classList.add("fade-in");
                     heading.classList.remove("fade-out");
-                } else {
+                } else if (heading) {
                     heading.classList.add("fade-out");
                     heading.classList.remove("fade-in");
                 }
-                if (isInViewport(paragraph)) {
-                    paragraph.classList.add("fade-in");
-                    paragraph.classList.remove("fade-out");
-                } else {
-                    paragraph.classList.add("fade-out");
-                    paragraph.classList.remove("fade-in");
+                if (subheading && isInViewport(subheading)) {
+                    subheading.classList.add("fade-in");
+                    subheading.classList.remove("fade-out");
+                } else if (subheading) {
+                    subheading.classList.add("fade-out");
+                    subheading.classList.remove("fade-in");
                 }
+                if (secondaryHeading && isInViewport(secondaryHeading)) {
+                    secondaryHeading.classList.add("fade-in");
+                    secondaryHeading.classList.remove("fade-out");
+                } else if (secondaryHeading) {
+                    secondaryHeading.classList.add("fade-out");
+                    secondaryHeading.classList.remove("fade-in");
+                }
+                paragraphs.forEach(paragraph => {
+                    if (isInViewport(paragraph)) {
+                        paragraph.classList.add("fade-in");
+                        paragraph.classList.remove("fade-out");
+                    } else {
+                        paragraph.classList.add("fade-out");
+                        paragraph.classList.remove("fade-in");
+                    }
+                });
             });
             function showSpinner() {
                 const spinner = document.getElementById("spinner");
