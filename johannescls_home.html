@@ -8,12 +8,18 @@
 
         <!-- Bootstrap CSS v5.2.1 -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
         <style>
             .custom-bg {
                 background-color: #15723d;
             }
             .custom-bg2 {
                 background-color: #F2AA01;
+            }
+            .custom-bg3 {
+                background-color: #08452C;
             }
             /* Spinner styles */
             #spinner {
@@ -285,11 +291,26 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex flex-col justify-content-center px-5">
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#about" class="nav-link fs-5 active">About Me</a></li>
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#projects" class="nav-link fs-5 active">Projects</a></li>
-                    <li class="nav-item m-2" style="width: 100px;"><a href="contacts" class="nav-link fs-5 active">Contact Me</a></li>
                     <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
                         <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">About</a>
+                        <ul class="dropdown-menu mega-menu">
+                            <li class="mega-menu-content">
+                                <div class="row gx-0 gx-lg-3">
+                                    <div class="col-lg-4">
+                                        <h6 class="dropdown-header">The Story of</h6>
+                                        <a href="#gohere">click me!</a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <h6 class="dropdown-header"> </h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#about" class="nav-link fs-5 active">Education</a></li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#projects" class="nav-link fs-5 active">Skills</a></li>
+                    <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
+                        <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">Projects</a>
                         <ul class="dropdown-menu mega-menu">
                             <li class="mega-menu-content">
                                 <div class="row gx-0 gx-lg-3">
@@ -303,6 +324,8 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#contacts" class="nav-link fs-5 active">Contact Me</a></li>
+                    
                 </ul>
             </div>
         </nav>
@@ -337,10 +360,10 @@
                     </picture>
                 </div>
                 <div class="carousel-item">
-                    <img src="imgSlider/sldrp1.jpg" alt="Photo 2" class="d-block" style="width:100%">
+                    <img src="imgSlider/blank_gold.jpg" alt="Photo 2" class="d-block" style="width:100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="imgSlider/sldrp2.jpg" alt="Photo 3" class="d-block" style="width:100%">
+                    <img src="imgSlider/slideMain_sd.jpg" alt="Photo 3" class="d-block" style="width:100%">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -351,8 +374,22 @@
             </button>
         </div>
         <div class="row m-3">
-            <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
-            <div class="col-md-8 p-3 bg-dark text-white">.col</div>
+            <div class="col-md-8 p-3 text-black">
+                <h1 style="font-size: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>WHO AM I?</b></h1>
+                <p style="font-size: 18px;">An enthusiastic Information Technology student with a strong foundation in Java and growing proficiency
+                in Python. Adept at self-learning and applying technical skills to solve real-world challenges efficiently.
+                Seeking an opportunity to leverage my knowledge, passion for IT, and self-learned expertise in a
+                dynamic environment and related fields, contributing to innovative solutions and continuous
+                improvement.</p>
+                <p style="font-size: 18px;">An enthusiastic Information Technology student with a strong foundation in Java and growing proficiency
+                in Python. Adept at self-learning and applying technical skills to solve real-world challenges efficiently.
+                Seeking an opportunity to leverage my knowledge, passion for IT, and self-learned expertise in a
+                dynamic environment and related fields, contributing to innovative solutions and continuous
+                improvement.</p>
+            </div>
+            <div class="col-md-2 p-3 text-black">
+                
+            </div>
         </div>
         <div class="row m-3">
             <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
@@ -362,9 +399,59 @@
             <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
             <div class="col-md-8 p-3 bg-dark text-white">.col</div>
         </div>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+        
+
+        <!-- Contact Me -->
+             
+        <div class="container-fluid bg-dark p-5" id="gohere">
+            <div class="container border border-1 rounded-3 p-4">
+                <h2 class="text-center mb-4 text-white">
+                    Contact Me</h2>
+                <form>
+                    <div class="mb-1">
+                        <label for="name" class="form-label text-white">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-1">
+                        <label for="email" class="form-label text-white">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-1">
+                        <label for="message" class="form-label text-white">Message</label>
+                        <textarea type="message" class="form-control" rows="3" id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+         
+                    <button class="btn btn-primary mt-4 d-flex justify-content-center w-5 w-100">Send</button>
+                </form>
+            </div>
+         </div>
+
+         <!-- Follow Me Sections -->
+         <div class="container-fluid bg-light py-3">
+            <div class="container text-center">
+                <div class="d-flex justify-content-center gap-4">
+                    <a href="https://facebook.com/johannesemmanuel.claus" class="text-decoration-none text-dark"><i class="bi bi-facebook fs-2"></i></a>
+                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-threads fs-2"></i></a>
+                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-instagram fs-2"></i></a>
+                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-tiktok fs-2"></i></a>
+                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-youtube fs-2"></i></a>
+                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-github fs-2"></i></a>
+                </div>
+            </div>
+         </div>
+
+         <!-- Footer -->
+
+         <footer class="custom-bg text-white text-center py-3">
+            <p class="mb-0">
+                &copy; 2025 johannescls &nbsp | &nbsp All rights reserved.
+            </p>
+         </footer>
+
+
+
+
+
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
