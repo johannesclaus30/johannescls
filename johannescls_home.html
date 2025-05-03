@@ -614,7 +614,7 @@
             </div>
         </article>
         
-        <!-- Get to Know Me -->
+        <!-- Skills -->
         <section>
             <div class="row m-3">
                 <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
@@ -793,74 +793,136 @@
             });
         </script>
         <script>
-    // Wait for the DOM to load
     document.addEventListener("DOMContentLoaded", function () {
         const ctx = document.getElementById('skillsChart').getContext('2d');
+        let skillsChart;
 
-        // Create a horizontal bar chart
-        const skillsChart = new Chart(ctx, {
-            type: 'bar', // Chart type: horizontal bar
-            data: {
-                labels: ['Java', 'HTML', 'CSS', 'SQL', 'Python', 'C++'], // Skill names
-                datasets: [{
-                    label: 'Skill Proficiency (%)',
-                    data: [90, 95, 85, 83, 70, 75], // Skill proficiency percentages
-                    backgroundColor: [
-                        '#F2AA01', // Custom-bg2 color
-                        '#08452C', // Custom-bg3 color
-                        '#15723d',
-                        '#f4edde',
-                        '#F2AA01',
-                        '#08452C'
-                    ],
-                    borderRadius: 10, // Rounded corners for bars
-                    barThickness: 20 // Thickness of the bars
-                }]
-            },
-            options: {
-                indexAxis: 'y', // Switch to horizontal bar chart
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false // Hide the legend for a minimalist look
+        // Function to create the chart
+        function createChart() {
+            if (!skillsChart) { // Only create the chart if it doesn't already exist
+                skillsChart = new Chart(ctx, {
+                    type: 'bar', // Chart type: horizontal bar
+                    data: {
+                        labels: ['Java', 'HTML', 'CSS', 'SQL', 'Python', 'C++'], // Skill names
+                        datasets: [{
+                            label: 'Skill Proficiency (%)',
+                            data: [90, 95, 85, 83, 70, 75], // Skill proficiency percentages
+                            backgroundColor: [
+                                '#F2AA01', // Custom-bg2 color
+                                '#08452C', // Custom-bg3 color
+                                '#15723d',
+                                '#f4edde',
+                                '#F2AA01',
+                                '#08452C'
+                            ],
+                            borderRadius: 10, // Rounded corners for bars
+                            barThickness: 20 // Thickness of the bars
+                        }]
                     },
-                    tooltip: {
-                        enabled: true // Enable tooltips for interactivity
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true, // Start x-axis at 0
-                        max: 100, // Set max value to 100
-                        ticks: {
-                            color: '#08452C', // Match the color palette
-                            font: {
-                                size: 14 // Adjust font size
+                    options: {
+                        indexAxis: 'y', // Switch to horizontal bar chart
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false // Hide the legend for a minimalist look
+                            },
+                            tooltip: {
+                                enabled: true // Enable tooltips for interactivity
                             }
                         },
-                        grid: {
-                            display: false // Hide grid lines for a minimalist look
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            color: '#08452C', // Match the color palette
-                            font: {
-                                size: 14 // Adjust font size
+                        scales: {
+                            x: {
+                                beginAtZero: true, // Start x-axis at 0
+                                max: 100, // Set max value to 100
+                                ticks: {
+                                    color: '#08452C', // Match the color palette
+                                    font: {
+                                        size: 14 // Adjust font size
+                                    }
+                                },
+                                grid: {
+                                    display: false // Hide grid lines for a minimalist look
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#08452C', // Match the color palette
+                                    font: {
+                                        size: 14 // Adjust font size
+                                    }
+                                },
+                                grid: {
+                                    display: false // Hide grid lines for a minimalist look
+                                }
                             }
                         },
-                        grid: {
-                            display: false // Hide grid lines for a minimalist look
+                        animation: {
+                            duration: 1500, // Animation duration in milliseconds
+                            easing: 'easeInOutQuad' // Smooth animation effect
                         }
                     }
-                },
-                animation: {
-                    duration: 1500, // Animation duration in milliseconds
-                    easing: 'easeInOutQuad' // Smooth animation effect
-                }
+                });
             }
+        }
+
+        // Function to destroy the chart with a closing transition
+        function destroyChart() {
+            if (skillsChart) {
+                // Add a closing animation by reducing the dataset values to 0
+                const closingAnimation = setInterval(() => {
+                    let allZero = true;
+
+                    // Gradually reduce the data values to 0
+                    skillsChart.data.datasets[0].data = skillsChart.data.datasets[0].data.map(value => {
+                        if (value > 0) {
+                            allZero = false;
+                            return Math.max(0, value - 5); // Decrease value by 5
+                        }
+                        return 0;
+                    });
+
+                    // Update the chart with the new data
+                    skillsChart.update();
+
+                    // If all values are 0, stop the animation and destroy the chart
+                    if (allZero) {
+                        clearInterval(closingAnimation);
+                        skillsChart.destroy(); // Destroy the chart instance
+                        skillsChart = null; // Reset the chart variable
+                    }
+                }, 50); // Update every 50ms for a smooth transition
+            }
+        }
+
+        // Intersection Observer to detect when the "Skills" section is in view
+        const skillsSection = document.querySelector('#skillsChart');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Create the chart when the section is in view
+                    createChart();
+                } else if (!entry.isIntersecting && !isInViewport(skillsSection)) {
+                    // Destroy the chart only if the section is completely out of view
+                    destroyChart();
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the section is visible
         });
+
+        observer.observe(skillsSection);
+
+        // Helper function to check if the element is in the viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
     });
 </script>
     </body>
