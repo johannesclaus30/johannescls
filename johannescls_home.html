@@ -350,6 +350,10 @@
                     padding: 6px 12px; /* Further adjust padding for mobile */
                 }
             }
+            #cardPic {
+                width: 600px;
+                border-radius: 15px;
+            }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
@@ -377,7 +381,7 @@
             </div>
         </header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary custom-bg">
-            <div class="container-fluid">
+            <div class="container-fluid col-md-6">
                 <a href="johannescls_home.html" class="navbar-brand">
                     <img src="otherImg/name_logo_navbar.png" alt="" class="px-4">
                 </a>
@@ -389,22 +393,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex flex-col justify-content-center px-5">
-                    <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
-                        <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">About</a>
-                        <ul class="dropdown-menu mega-menu">
-                            <li class="mega-menu-content">
-                                <div class="row gx-0 gx-lg-3">
-                                    <div class="col-lg-4">
-                                        <h6 class="dropdown-header">The Story of</h6>
-                                        <a href="#gohere">click me!</a>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <h6 class="dropdown-header"> </h6>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#contacts" class="nav-link fs-5 active">About Me</a></li>
                     <li class="nav-item m-2" style="width: 100px;"><a href="#about" class="nav-link fs-5 active">Education</a></li>
                     <li class="nav-item m-2" style="width: 100px;"><a href="#projects" class="nav-link fs-5 active">Skills</a></li>
                     <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
@@ -422,7 +411,31 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#contacts" class="nav-link fs-5 active">Contact Me</a></li>
+    
+                    <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
+                        <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">Contact Me</a>
+                        <ul class="dropdown-menu mega-menu">
+                            <li class="mega-menu-content">
+                                <div class="row gx-0 gx-lg-3">
+                                    <div class="col-lg-4 m-3">
+                                        <h6 class="dropdown-header">Send me a Message!</h6>
+                                        <li><a class="dropdown-item" href="#gohere">Contact Me</a></li>
+                                        <h6 class="dropdown-header">My Socials</h6>
+                                        <li><a class="dropdown-item" href="#gohere">Facebook</a></li>
+                                        <li><a class="dropdown-item" href="#gohere">Instagram</a></li>
+                                        <li><a class="dropdown-item" href="#gohere">TikTok</a></li>
+                                        <li><a class="dropdown-item" href="#gohere">YouTube</a></li>
+                                        <li><a class="dropdown-item" href="#gohere">Github</a></li>
+                                        <h6 class="dropdown-header">Reach me via Email!</h6>
+                                        <li><a class="dropdown-item" href="#gohere">GMail</a></li>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <h6 class="dropdown-header"> </h6>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                     
                 </ul>
             </div>
@@ -612,14 +625,18 @@
                     </div>              
                 </div>
             </div>
-        </article>
-        
-        <!-- Skills -->
-        <section>
-            <div class="row m-3">
+
+            <!-- Skills -->
+            <div class="row m-3 p-3">
                 <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
                     <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">SKILLS</h1>
-                    
+                    <p style="font-size: 18px;">
+                        Johannes is an IT student with a strong technical foundation in programming and a passion for creative digital media. Proficient in Java, HTML, and CSS, he develops structured and visually cohesive web applications. His knowledge of SQL, Python, and C++ supports efficient software development and database management. Additionally, he possesses practical expertise in computer hardware, including system assembly and troubleshooting.
+                    </p>
+                    <p style="font-size: 18px;">
+                        Beyond programming, he excels in multimedia production, demonstrating graphic design, photography, and film skills. His ability to combine technical precision with creative execution allows them to produce high-quality digital content. 
+                    </p>
+
                     <div class="col m-3">
                         <!-- Add a canvas for the chart -->
                     <canvas id="skillsChart" width="400" height="400"></canvas>
@@ -627,17 +644,128 @@
                     
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
-                    <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
+                    <img src="otherImg/skills_photo.jpg" id="articleInside" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid" style="width: auto; height: auto;">
+                </div>
+            </div>
+        </article>
+        
+
+        <!-- Interests -->
+        <section>
+            <div class="row m-3">
+                <div class="container-fluid  p-3" style="color: #08452C;">
+                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">INTERESTS</h1>
+                    
+
+                    <div class="col m-3">
+                        <!-- Add a canvas for the chart -->
+                    <canvas id="skillsChart" width="400" height="400"></canvas>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section>
+    <div class="row m-3" style="color: #08452C;">
+        <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">PROJECTS</h1>
+        <div class="container-fluid p-3" style="color: #08452C;">
+            
+            <!-- Carousel wrapper -->
+            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -100px;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -100px;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <!-- Inner -->
+                <div class="carousel-inner py-4">
+                    <!-- First item -->
+                    <div class="carousel-item active">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/NU.jpg" id="cardPic" class=" img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/sldrp1.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/slideMain_sd.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second item -->
+                    <div class="carousel-item">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 row-sd-12">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/slideMain_md.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/sldrp2.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="card border-0">
+                                        <img src="imgSlider/NU.jpg" id="cardPic" class="card-img-top img-fluid" alt="Image description">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+        <!-- Achievements and Experiences -->
+        <section>
+            <div class="row m-3">
+                <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
+                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">ACHIEVEMENTS</h1>
+                    <p style="font-size: 18px;">
+                        Johannes is an IT student with a strong technical foundation in programming and a passion for creative digital media. Proficient in Java, HTML, and CSS, he develops structured and visually cohesive web applications. His knowledge of SQL, Python, and C++ supports efficient software development and database management. Additionally, he possesses practical expertise in computer hardware, including system assembly and troubleshooting.
+                    </p>
+                    <p style="font-size: 18px;">
+                        Beyond programming, he excels in multimedia production, demonstrating graphic design, photography, and film skills. His ability to combine technical precision with creative execution allows them to produce high-quality digital content. 
+                    </p>
+
+                    <div class="col m-3">
+                        <!-- Add a canvas for the chart -->
+                    <canvas id="skillsChart" width="400" height="400"></canvas>
+                    </div>
+                    
+                </div>
+                <div class="col-md-5 col-sd-3 text-black">
+                    <img src="otherImg/skills_photo.jpg" id="articleInside" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid" style="width: auto; height: auto;">
                 </div>
             </div>
         </section>
 
-        <!-- Contact Me -->
+                <!-- Contact Me -->
         <div class="container-fluid custom-bg3 p-5" id="gohere">
             <div class="container border border-1 rounded-3 p-4">
-                <h2 class="text-center mb-4 text-white">
-                    Contact Me</h2>
-                <form>
+                <h2 class="text-center mb-4 text-white">Contact Me</h2>
+                <form id="contactForm">
                     <div class="mb-1">
                         <label for="name" class="form-label text-white">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
@@ -648,12 +776,12 @@
                     </div>
                     <div class="mb-1">
                         <label for="message" class="form-label text-white">Message</label>
-                        <textarea type="message" class="form-control" rows="3" id="message" placeholder="Enter your message" required></textarea>
+                        <textarea class="form-control" rows="3" id="message" placeholder="Enter your message" required></textarea>
                     </div>
-                    <button class="btn btn-primary mt-4 d-flex justify-content-center w-5 w-100">Send</button>
+                    <button type="submit" class="btn btn-primary mt-4 d-flex justify-content-center w-5 w-100">Send</button>
                 </form>
             </div>
-         </div>
+        </div>
 
          <!-- Follow Me Sections -->
          <div class="container-fluid bg-light py-3" id="contactList">
@@ -922,6 +1050,39 @@
                 rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
             );
+        }
+    });
+</script>
+<!-- Include SweetAlert Library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Validate form fields
+        if (name === "" || email === "" || message === "") {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill out all fields!",
+            });
+        } else {
+            // Display success message
+            Swal.fire({
+                icon: "success",
+                title: "Message Sent!",
+                text: "Thank you for reaching out. I will get back to you soon!",
+            });
+
+            // Optionally, reset the form
+            document.getElementById("contactForm").reset();
         }
     });
 </script>
