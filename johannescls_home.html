@@ -21,6 +21,9 @@
             .custom-bg3 {
                 background-color: #08452C;
             }
+            .custom-bg4 {
+                background-color: #f4edde;
+            }
             /* Spinner styles */
             #spinner {
                 position: fixed;
@@ -36,6 +39,45 @@
             }
             #spinner.hidden {
                 display: none;
+            }
+            .buttonMore {
+            display: inline-block;
+            border-radius: 40px;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            width: 350px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            }
+
+            .buttonMore span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+            }
+
+            .buttonMore span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+            }
+
+            .buttonMore:hover span {
+            padding-right: 25px;
+            }
+
+            .buttonMore:hover span:after {
+            opacity: 1;
+            right: 0;
             }
             /* Custom styles for carousel indicators */
             .carousel-indicators {
@@ -259,9 +301,13 @@
                     min-height: 300px; /* Larger height for normal screens */
                 }
             }
+            body {
+                overflow-x: hidden; /* Disable horizontal scrolling */
+            }
         </style>
     </head>
     <body style="background-color: #FFFFFF;">
+        
         <!-- Spinner -->
         <div id="spinner">
             <div class="spinner-border text-mute" role="status">
@@ -275,15 +321,20 @@
                         <h5 class="text-wrap text-md-nowrap">Hello World! I am Johannes Emmanuel A. Claus</h5>
                     </div>
                     <div class="col-auto">
-                        <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+                        <a href="#aboutme">
+                            <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
+                        </a>
+                        
                     </div>
                 </div>
             </div>
         </header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary custom-bg">
             <div class="container-fluid">
-                <a class="navbar-brand">
+                <a href="johannescls_home.html" class="navbar-brand">
                     <img src="otherImg/name_logo_navbar.png" alt="" class="px-4">
+                </a>
+                <a class="navbar-brand">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-shock-absorber-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -347,10 +398,10 @@
                                 Johannes Emmanuel A. Claus
                             </h1>
                             <h2 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small">
-                                Click the button
+                                Let me introduce myself.
                             </h2>
-                            <h4 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small">
-                                Discover more about me!
+                            <h4 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small" style="font-size: 18px;">
+                                Welcome!
                             </h4>
                         </div>
                     </div>
@@ -373,24 +424,47 @@
                 <span class="carousel-control-next-icon"></span>
             </button>
         </div>
-        <div class="row m-3">
-            <div class="col-md-8 p-3 text-black">
-                <h1 style="font-size: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><b>WHO AM I?</b></h1>
-                <p style="font-size: 18px;">An enthusiastic Information Technology student with a strong foundation in Java and growing proficiency
-                in Python. Adept at self-learning and applying technical skills to solve real-world challenges efficiently.
-                Seeking an opportunity to leverage my knowledge, passion for IT, and self-learned expertise in a
-                dynamic environment and related fields, contributing to innovative solutions and continuous
-                improvement.</p>
-                <p style="font-size: 18px;">An enthusiastic Information Technology student with a strong foundation in Java and growing proficiency
-                in Python. Adept at self-learning and applying technical skills to solve real-world challenges efficiently.
-                Seeking an opportunity to leverage my knowledge, passion for IT, and self-learned expertise in a
-                dynamic environment and related fields, contributing to innovative solutions and continuous
-                improvement.</p>
+
+        <!-- Get to Know Me -->
+        <section>
+            <div class="row m-3">
+                <div class="container-fluid col-lg-7 col-md-9 p-3 text-black">
+                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">GET TO KNOW ME</h1>
+                    <p style="font-size: 18px;">
+                        <b>Johannes Emmanuel Adorza Claus</b> is a dedicated IT student currently pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University Lipa. Born on March 30, 2005, he has consistently excelled in academics while actively engaging in extracurricular activities, demonstrating a well-rounded commitment to personal and professional growth.
+                    </p>
+                    <p style="font-size: 18px;">
+                        With a strong foundation in programming, he is proficient in Java, HTML, CSS, SQL, Python, and C++. Beyond his technical skills, he also possesses a creative flair as a graphic designer and layout artist, merging logic with artistic expression. His passion for technology extends outside the classroom, where he participates in organizations, competitions, and collaborative projects that sharpen his leadership and teamwork abilities.
+                    </p>
+                    <p style="font-size: 18px;">
+                        Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
+                    </p>
+                    <a href="another_page.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <a href="#contactList" class="buttonMore custom-bg3 align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
+                </div>
+                <div class="col-md-5 col-sd-3 text-black">
+                    <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
+                </div>
             </div>
-            <div class="col-md-2 p-3 text-black">
-                
+        </section>
+
+        <article>
+            <div class="row m-3 p-15 custom-bg4">
+                <div class="container-fluid col-lg-7 col-md-9 p-3 text-black">
+                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">GET TO KNOW ME</h1>
+                    <p style="font-size: 18px;">
+                        <b>Johannes Emmanuel Adorza Claus</b> is a dedicated IT student currently pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University Lipa. Born on March 30, 2005, he has consistently excelled in academics while actively engaging in extracurricular activities, demonstrating a well-rounded commitment to personal and professional growth.
+                    </p>
+                 
+                    <a href="another_page.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <a href="#contactList" class="buttonMore custom-bg3 align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
+                </div>
+                <div class="col-md-5 col-sd-3 text-black">
+                    <!--add photo here (square)-->
+                </div>
             </div>
-        </div>
+        </article>
+        
         <div class="row m-3">
             <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
             <div class="col-md-8 p-3 bg-dark text-white">.col</div>
@@ -402,7 +476,6 @@
         
 
         <!-- Contact Me -->
-             
         <div class="container-fluid bg-dark p-5" id="gohere">
             <div class="container border border-1 rounded-3 p-4">
                 <h2 class="text-center mb-4 text-white">
@@ -420,14 +493,13 @@
                         <label for="message" class="form-label text-white">Message</label>
                         <textarea type="message" class="form-control" rows="3" id="message" placeholder="Enter your message" required></textarea>
                     </div>
-         
                     <button class="btn btn-primary mt-4 d-flex justify-content-center w-5 w-100">Send</button>
                 </form>
             </div>
          </div>
 
          <!-- Follow Me Sections -->
-         <div class="container-fluid bg-light py-3">
+         <div class="container-fluid bg-light py-3" id="contactList">
             <div class="container text-center">
                 <div class="d-flex justify-content-center gap-4">
                     <a href="https://facebook.com/johannesemmanuel.claus" class="text-decoration-none text-dark"><i class="bi bi-facebook fs-2"></i></a>
