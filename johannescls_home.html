@@ -2,13 +2,10 @@
 <html lang="en">
     <head>
         <title>JohannesCLS | Home</title>
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-        <!-- Bootstrap CSS v5.2.1 -->
+        <link rel="icon" type="image/png" href="otherImg/CirclePhoto_Header.png" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <style>
@@ -46,10 +43,10 @@
             border: none;
             color: #FFFFFF;
             text-align: center;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
             padding: 10px;
-            width: 350px;
+            width: 330px;
             transition: all 0.5s;
             cursor: pointer;
             margin: 5px;
@@ -304,6 +301,10 @@
             body {
                 overflow-x: hidden; /* Disable horizontal scrolling */
             }
+            article {
+                overflow: hidden; /* Hide overflowing content */
+            }
+
         </style>
     </head>
     <body style="background-color: #FFFFFF;">
@@ -380,6 +381,7 @@
                 </ul>
             </div>
         </nav>
+
         <!-- Carousel -->
         <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-indicators">
@@ -439,7 +441,7 @@
                     <p style="font-size: 18px;">
                         Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
                     </p>
-                    <a href="another_page.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <a href="johannescls_home.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
                     <a href="#contactList" class="buttonMore custom-bg3 align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
@@ -448,32 +450,47 @@
             </div>
         </section>
 
-        <article>
-            <div class="row m-3 p-15 custom-bg4">
+        
+        <article class="container-fluid">
+            <div class="row m-3">
+                <div class="row m-3 p-3 custom-bg4">
+                    <div class="col m-3">
+                        <!--add photo here (square)-->
+                        <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-sd-12 m-3 text-center" style="color: #08452C;">
+                        <h1 class="text-wrap" style="font-size: 38px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">BACKGROUND</h1>
+                        <p class="text-wrap" style="font-size: 18px;">
+                            is a dedicated IT student currently pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University Lipa. Born on March 30, 2005, he has consistently excelled in academics while actively engaging in extracurricular activities, demonstrating a well-rounded commitment to personal and professional growth.
+                        </p>
+                        <a href="johannescls_home.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    </div>   
+                </div>
+            </div>
+        </article>
+        
+        <!-- Get to Know Me -->
+        <section>
+            <div class="row m-3">
                 <div class="container-fluid col-lg-7 col-md-9 p-3 text-black">
                     <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">GET TO KNOW ME</h1>
                     <p style="font-size: 18px;">
                         <b>Johannes Emmanuel Adorza Claus</b> is a dedicated IT student currently pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University Lipa. Born on March 30, 2005, he has consistently excelled in academics while actively engaging in extracurricular activities, demonstrating a well-rounded commitment to personal and professional growth.
                     </p>
-                 
-                    <a href="another_page.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <p style="font-size: 18px;">
+                        With a strong foundation in programming, he is proficient in Java, HTML, CSS, SQL, Python, and C++. Beyond his technical skills, he also possesses a creative flair as a graphic designer and layout artist, merging logic with artistic expression. His passion for technology extends outside the classroom, where he participates in organizations, competitions, and collaborative projects that sharpen his leadership and teamwork abilities.
+                    </p>
+                    <p style="font-size: 18px;">
+                        Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
+                    </p>
+                    <a href="johannescls_home.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
                     <a href="#contactList" class="buttonMore custom-bg3 align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
-                    <!--add photo here (square)-->
+                    <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
                 </div>
             </div>
-        </article>
-        
-        <div class="row m-3">
-            <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
-            <div class="col-md-8 p-3 bg-dark text-white">.col</div>
-        </div>
-        <div class="row m-3">
-            <div class="col-md-4 p-3 bg-primary text-white"><h5>Johannes Emmanuel A. Claus</h5></div>
-            <div class="col-md-8 p-3 bg-dark text-white">.col</div>
-        </div>
-        
+        </section>
 
         <!-- Contact Me -->
         <div class="container-fluid bg-dark p-5" id="gohere">
@@ -618,6 +635,21 @@
             window.addEventListener("load", () => {
                 clearTimeout(timeout);
                 hideSpinner();
+            });
+
+            const carousel = document.querySelector('#demo');
+
+            window.addEventListener('scroll', function () {
+                const rect = carousel.getBoundingClientRect();
+                const isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+                if (!isInView) {
+                    const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+                    carouselInstance.pause(); // Pause the carousel when it's not in view
+                } else {
+                    const carouselInstance = bootstrap.Carousel.getInstance(carousel);
+                    carouselInstance.cycle(); // Resume the carousel when it's in view
+                }
             });
         </script>
     </body>
