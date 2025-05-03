@@ -351,6 +351,7 @@
                 }
             }
         </style>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body style="background-color: #FFFFFF;">
         
@@ -486,11 +487,11 @@
                     <p style="font-size: 18px;">
                         Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
                     </p>
-                    <a href="johannescls_home.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
-                    <a href="#contactList" class="buttonMore custom-bg align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
+                    <a href="johannescls_home.html" class="justify-content-center align-items-center buttonMore custom-bg2" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <a href="#contactList" class="justify-content-center align-items-center buttonMore custom-bg" style="vertical-align:middle"><span>Contact Me</span></a>
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
-                    <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
+                    <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid rounded-circle" style="width: auto; height: auto;">
                 </div>
             </div>
         </section>
@@ -558,7 +559,7 @@
                         <div class="container-fluid align-items-center text-center">
                             <h1 class="container-fluid custom-bg2 text-white d-inline-block px-4 py-1" style="font-size: 38px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;" id="articleInside">JUNIOR HIGH EDUCATION</h1>
                         </div>
-                        <div class=" d-flex justify-content-center align-items-center col m-3" style="height: 300px;">
+                        <div class="d-flex justify-content-center align-items-center col m-3" style="height: 300px;">
                             <!--add photo here (square)-->
                             <img src="otherImg/sja_transparent.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
                         </div>
@@ -602,7 +603,7 @@
                                     </h1>
                                 </div>
                             </div> 
-                            <div class="text-end">
+                            <div class="text-end mt-4">
                                 <a href="johannescls_home.html" class="buttonMore custom-bg align-items-right m-2" style="vertical-align:middle;">
                                     <span>View Achievements</span>
                                 </a>
@@ -616,19 +617,14 @@
         <!-- Get to Know Me -->
         <section>
             <div class="row m-3">
-                <div class="container-fluid col-lg-7 col-md-9 p-3 text-black">
-                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">GET TO KNOW ME</h1>
-                    <p style="font-size: 18px;">
-                        <b>Johannes Emmanuel Adorza Claus</b> is a dedicated IT student currently pursuing a Bachelor of Science in Information Technology with a specialization in Mobile and Web Applications at National University Lipa. Born on March 30, 2005, he has consistently excelled in academics while actively engaging in extracurricular activities, demonstrating a well-rounded commitment to personal and professional growth.
-                    </p>
-                    <p style="font-size: 18px;">
-                        With a strong foundation in programming, he is proficient in Java, HTML, CSS, SQL, Python, and C++. Beyond his technical skills, he also possesses a creative flair as a graphic designer and layout artist, merging logic with artistic expression. His passion for technology extends outside the classroom, where he participates in organizations, competitions, and collaborative projects that sharpen his leadership and teamwork abilities.
-                    </p>
-                    <p style="font-size: 18px;">
-                        Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
-                    </p>
-                    <a href="johannescls_home.html" class="buttonMore custom-bg2 align-items-center" style="vertical-align:middle"><span>Discover More About Me</span></a>
-                    <a href="#contactList" class="buttonMore custom-bg3 align-items-center" style="vertical-align:middle"><span>Contact Me</span></a>
+                <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
+                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">SKILLS</h1>
+                    
+                    <div class="col m-3">
+                        <!-- Add a canvas for the chart -->
+                    <canvas id="skillsChart" width="400" height="400"></canvas>
+                    </div>
+                    
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
                     <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: auto; height: auto;">
@@ -796,5 +792,76 @@
                 }
             });
         </script>
+        <script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+
+        // Create a horizontal bar chart
+        const skillsChart = new Chart(ctx, {
+            type: 'bar', // Chart type: horizontal bar
+            data: {
+                labels: ['Java', 'HTML', 'CSS', 'SQL', 'Python', 'C++'], // Skill names
+                datasets: [{
+                    label: 'Skill Proficiency (%)',
+                    data: [90, 95, 85, 83, 70, 75], // Skill proficiency percentages
+                    backgroundColor: [
+                        '#F2AA01', // Custom-bg2 color
+                        '#08452C', // Custom-bg3 color
+                        '#15723d',
+                        '#f4edde',
+                        '#F2AA01',
+                        '#08452C'
+                    ],
+                    borderRadius: 10, // Rounded corners for bars
+                    barThickness: 20 // Thickness of the bars
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Switch to horizontal bar chart
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false // Hide the legend for a minimalist look
+                    },
+                    tooltip: {
+                        enabled: true // Enable tooltips for interactivity
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true, // Start x-axis at 0
+                        max: 100, // Set max value to 100
+                        ticks: {
+                            color: '#08452C', // Match the color palette
+                            font: {
+                                size: 14 // Adjust font size
+                            }
+                        },
+                        grid: {
+                            display: false // Hide grid lines for a minimalist look
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#08452C', // Match the color palette
+                            font: {
+                                size: 14 // Adjust font size
+                            }
+                        },
+                        grid: {
+                            display: false // Hide grid lines for a minimalist look
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500, // Animation duration in milliseconds
+                    easing: 'easeInOutQuad' // Smooth animation effect
+                }
+            }
+        });
+    });
+</script>
     </body>
 </html>
