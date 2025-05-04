@@ -359,4 +359,15 @@
             .slide-left {
                 animation: slideLeft 1s ease-out forwards;
             }
+
+            :root {
+                color-scheme: light;
+            }
+    
+            @media (prefers-color-scheme: dark) {
+                html {
+                    background-color: #FFFFFF;
+                    color: #000000;
+                }
+            }
   
