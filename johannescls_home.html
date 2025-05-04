@@ -354,6 +354,22 @@
                 width: 600px;
                 border-radius: 15px;
             }
+            @keyframes slideLeft {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                    border-radius: 20px;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                    border-radius: 20px;
+                }
+            }
+
+            .slide-left {
+                animation: slideLeft 1s ease-out forwards;
+            }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
@@ -372,7 +388,7 @@
                         <h5 class="text-wrap text-md-nowrap">Hello World! I am Johannes Emmanuel A. Claus</h5>
                     </div>
                     <div class="col-auto">
-                        <a href="#aboutme">
+                        <a href="#aboutMe">
                             <img src="otherImg/CirclePhoto_Header.png" alt="circle_photo_header" class="img-fluid rounded-circle" style="width: 60px; height: 60px;">
                         </a>
                         
@@ -393,24 +409,10 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav d-flex flex-col justify-content-center px-5">
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#contacts" class="nav-link fs-5 active">About Me</a></li>
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#about" class="nav-link fs-5 active">Education</a></li>
-                    <li class="nav-item m-2" style="width: 100px;"><a href="#projects" class="nav-link fs-5 active">Skills</a></li>
-                    <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
-                        <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">Projects</a>
-                        <ul class="dropdown-menu mega-menu">
-                            <li class="mega-menu-content">
-                                <div class="row gx-0 gx-lg-3">
-                                    <div class="col-lg-4">
-                                        <h6 class="dropdown-header">The Story of</h6>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <h6 class="dropdown-header"> </h6>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#aboutMe" class="nav-link fs-5 active">About Me</a></li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#educationList" class="nav-link fs-5 active">Education</a></li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#skillsList" class="nav-link fs-5 active">Skills</a></li>
+                    <li class="nav-item m-2" style="width: 100px;"><a href="#projectsList" class="nav-link fs-5 active">Projects</a></li>
     
                     <li class="nav-item dropdown dropdown-mega m-2" style="width: 100px;">
                         <a class="nav-link dropdown-toggle fs-5 active" href="#" data-bs-toggle="dropdown">Contact Me</a>
@@ -421,13 +423,13 @@
                                         <h6 class="dropdown-header">Send me a Message!</h6>
                                         <li><a class="dropdown-item" href="#gohere">Contact Me</a></li>
                                         <h6 class="dropdown-header">My Socials</h6>
-                                        <li><a class="dropdown-item" href="#gohere">Facebook</a></li>
-                                        <li><a class="dropdown-item" href="#gohere">Instagram</a></li>
-                                        <li><a class="dropdown-item" href="#gohere">TikTok</a></li>
-                                        <li><a class="dropdown-item" href="#gohere">YouTube</a></li>
-                                        <li><a class="dropdown-item" href="#gohere">Github</a></li>
+                                        <li><a class="dropdown-item" href="https://facebook.com/@johannescls">Facebook</a></li>
+                                        <li><a class="dropdown-item" href="https://instagram.com/johannescls">Instagram</a></li>
+                                        <li><a class="dropdown-item" href="https://tiktok.com/@johannescls_">TikTok</a></li>
+                                        <li><a class="dropdown-item" href="https://youtube.com/@johannescls">YouTube</a></li>
+                                        <li><a class="dropdown-item" href="https://github.com/johannesclaus30">Github</a></li>
                                         <h6 class="dropdown-header">Reach me via Email!</h6>
-                                        <li><a class="dropdown-item" href="#gohere">GMail</a></li>
+                                        <li><a class="dropdown-item" href="https://mail.google.com/mail/u/0/?hl=en#inbox?compose=DmwnWrRttgGJBfcHxfSVhWgkscNhSnFNzJFtDPZWkgXXwmldtmKmMPxjgvNLKjvqkvVcgQzKNFzG">GMail</a></li>
                                     </div>
                                     <div class="col-lg-4">
                                         <h6 class="dropdown-header"> </h6>
@@ -442,7 +444,7 @@
         </nav>
 
         <!-- Carousel -->
-        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
@@ -459,10 +461,10 @@
                                 Johannes Emmanuel A. Claus
                             </h1>
                             <h2 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small">
-                                Let me introduce myself.
+                                Welcome to my Page!
                             </h2>
                             <h4 class="lead text-white animate__animated animate__slideInRight animate__delay-2s text-wrap mt-2 hide-on-small" style="font-size: 18px;">
-                                Welcome!
+                                Let me introduce myself.
                             </h4>
                         </div>
                     </div>
@@ -472,10 +474,16 @@
                     </picture>
                 </div>
                 <div class="carousel-item">
-                    <img src="imgSlider/blank_gold.jpg" alt="Photo 2" class="d-block" style="width:100%">
+                    <video class="d-block w-100" autoplay muted loop>
+                        <source src="contact_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="carousel-item">
-                    <img src="imgSlider/slideMain_sd.jpg" alt="Photo 3" class="d-block" style="width:100%">
+                    <video class="d-block w-100" autoplay muted loop>
+                        <source src="hobbies_vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
@@ -488,7 +496,7 @@
 
         <!-- Get to Know Me -->
         <section>
-            <div class="row m-3">
+            <div class="row m-3" id="aboutMe">
                 <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
                     <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">GET TO KNOW ME</h1>
                     <p style="font-size: 18px;">
@@ -500,7 +508,7 @@
                     <p style="font-size: 18px;">
                         Driven by curiosity and a desire to innovate, he continually seeks opportunities to expand his knowledge, contribute to the tech community, and make a meaningful impact in the digital world.
                     </p>
-                    <a href="johannescls_home.html" class="justify-content-center align-items-center buttonMore custom-bg2" style="vertical-align:middle"><span>Discover More About Me</span></a>
+                    <a href="https://instagram.com/johannescls" class="justify-content-center align-items-center buttonMore custom-bg2" style="vertical-align:middle"><span>Discover More About Me</span></a>
                     <a href="#contactList" class="justify-content-center align-items-center buttonMore custom-bg" style="vertical-align:middle"><span>Contact Me</span></a>
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
@@ -510,7 +518,7 @@
         </section>
 
         <!--Educational Background-->
-        <article class="container-fluid bg-light">
+        <article class="container-fluid bg-light" id="educationList">
             <div class="row m-3">
                 <h1 class="text-wrap text-center mt-3" style="color: #08452C; font-size: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">BACKGROUND</h1> 
                 <div class="row m-3 p-3 custom-bg4" id="articleInside">
@@ -534,7 +542,7 @@
                                         SM City Lipa, Ayala Highway, Brgy. Marauoy, Lipa City, Batangas, Philippines
                                     </p>
                                     <h1 class="text-wrap" style="font-size: 35px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bolder;">
-                                        2023-2027 | BS Information Technology
+                                        2023-Present | BS Information Technology
                                     </h1>
                                 </div>
                             </div>                            
@@ -617,7 +625,7 @@
                                 </div>
                             </div> 
                             <div class="text-end mt-4">
-                                <a href="johannescls_home.html" class="buttonMore custom-bg align-items-right m-2" style="vertical-align:middle;">
+                                <a href="#achievementsList" class="buttonMore custom-bg align-items-right m-2" style="vertical-align:middle;">
                                     <span>View Achievements</span>
                                 </a>
                             </div>                             
@@ -627,7 +635,7 @@
             </div>
 
             <!-- Skills -->
-            <div class="row m-3 p-3">
+            <div class="row m-3 p-3" id="skillsList">
                 <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
                     <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">SKILLS</h1>
                     <p style="font-size: 18px;">
@@ -644,119 +652,121 @@
                     
                 </div>
                 <div class="col-md-5 col-sd-3 text-black">
-                    <img src="otherImg/skills_photo.jpg" id="articleInside" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid" style="width: auto; height: auto;">
+                    <img src="otherImg/interests_photo.jpg" id="slideLeftImage" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid" style="width: auto; height: auto;">
                 </div>
             </div>
-        </article>
-        
-
-        <!-- Interests -->
-        <section>
-            <div class="row m-3">
-                <div class="container-fluid  p-3" style="color: #08452C;">
-                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">INTERESTS</h1>
+            <!-- Projects -->
+        <section class="container-fluid" id="projectsList">
+            <div class="row m-3" style="color: #08452C;">
+                <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">PROJECTS</h1>
+                <div class="container-fluid p-3" style="color: #08452C;">
                     
-
-                    <div class="col m-3">
-                        <!-- Add a canvas for the chart -->
-                    <canvas id="skillsChart" width="400" height="400"></canvas>
+                    <!-- Carousel wrapper -->
+                    <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -100px;">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -100px;">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <!-- Inner -->
+                        <div class="carousel-inner py-4">
+                            <!-- First item -->
+                            <div class="carousel-item active">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="card border-0">
+                                                <img src="otherImg/strivingspark_proj.jpg" id="cardPic" class=" img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 d-none d-lg-block">
+                                            <div class="card border-0">
+                                                <img src="otherImg/personalweb_proj.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 d-none d-lg-block">
+                                            <div class="card border-0">
+                                                <img src="otherImg/anudao_proj.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Second item -->
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 row-sd-12">
+                                            <div class="card border-0">
+                                                <img src="otherImg/unsplash_proj.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 d-none d-lg-block">
+                                            <div class="card border-0">
+                                                <img src="otherImg/nationalu_proj.jpg" id="cardPic" class="img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 d-none d-lg-block">
+                                            <div class="card border-0">
+                                                <img src="otherImg/other_proj.jpg" id="cardPic" class="card-img-top img-fluid" alt="Image description">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
-                
             </div>
         </section>
+        </article>
 
-        <!-- Projects -->
-        <section>
-    <div class="row m-3" style="color: #08452C;">
-        <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">PROJECTS</h1>
-        <div class="container-fluid p-3" style="color: #08452C;">
-            
-            <!-- Carousel wrapper -->
-            <div id="carouselMultiItemExample" class="carousel slide carousel-dark text-center" data-bs-ride="carousel">
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="prev" style="position: absolute; top: 50%; transform: translateY(-50%); left: -100px;">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiItemExample" data-bs-slide="next" style="position: absolute; top: 50%; transform: translateY(-50%); right: -100px;">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <!-- Inner -->
-                <div class="carousel-inner py-4">
-                    <!-- First item -->
-                    <div class="carousel-item active">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/NU.jpg" id="cardPic" class=" img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/sldrp1.jpg" id="cardPic" class="img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/slideMain_sd.jpg" id="cardPic" class="img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Second item -->
-                    <div class="carousel-item">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 row-sd-12">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/slideMain_md.jpg" id="cardPic" class="img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/sldrp2.jpg" id="cardPic" class="img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="card border-0">
-                                        <img src="imgSlider/NU.jpg" id="cardPic" class="card-img-top img-fluid" alt="Image description">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
+        
 
         <!-- Achievements and Experiences -->
-        <section>
-            <div class="row m-3">
-                <div class="container-fluid col-lg-7 col-md-9 p-3" style="color: #08452C;">
-                    <h1 style="font-size: 72px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">ACHIEVEMENTS</h1>
-                    <p style="font-size: 18px;">
-                        Johannes is an IT student with a strong technical foundation in programming and a passion for creative digital media. Proficient in Java, HTML, and CSS, he develops structured and visually cohesive web applications. His knowledge of SQL, Python, and C++ supports efficient software development and database management. Additionally, he possesses practical expertise in computer hardware, including system assembly and troubleshooting.
-                    </p>
-                    <p style="font-size: 18px;">
-                        Beyond programming, he excels in multimedia production, demonstrating graphic design, photography, and film skills. His ability to combine technical precision with creative execution allows them to produce high-quality digital content. 
-                    </p>
-
-                    <div class="col m-3">
-                        <!-- Add a canvas for the chart -->
-                    <canvas id="skillsChart" width="400" height="400"></canvas>
+        <section class="container-fluid" id="achievementsList">
+            <div class="row my-5 p-3">
+                <div class="container-fluid" style="color: #08452C;">
+                    <h1 class="text-center" style="font-size: 46px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">ACHIEVEMENTS</h1>
+                    <div class="row m-5">
+                        <h1 style="font-size: 36px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">COLLEGE</h1>
+                        <div class="mx-5" style="font-size: 20px;">
+                            <li>IC3 GS6 Level 1 Passer (2024)</li>
+                            <li>NU Lipa Marketing Office - Student Assistant</li>
+                            <li>NU Lipa Community Extension Brigade - Student Volunteer</li>
+                            <li>Dean's Lister: First Honor (2023-2025)</li>
+                            <li>Chief Photojournalist - The Synergy | Official Student Publication of NU Lipa, SACE</li>
+                        </div>
                     </div>
-                    
-                </div>
-                <div class="col-md-5 col-sd-3 text-black">
-                    <img src="otherImg/skills_photo.jpg" id="articleInside" alt="circle_photo_header" class="d-flex justify-content-center align-items-center img-fluid" style="width: auto; height: auto;">
+                    <div class="row m-5">
+                        <h1 style="font-size: 36px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">SENIOR HIGH SCHOOL</h1>
+                        <div class="mx-5" style="font-size: 20px;">
+                            <li>Graduated With Honors - Grade 12 (2022-2023)</li>
+                            <li>Work Immersion Awardee</li>
+                            <li>Alangilan Senior High School - Student Volunteer (Public Relations)</li>
+                            <li>Youth for the Environment in Schools Organization, ASHS Chapter - Auditor (2022-2023)</li>
+                            <li>Alangilan Senior High School - Supreme Student Government: Technical Team Member (2022-2024)</li>
+                            <li>Youth for the Environment in Schools Organization, ASHS Chapter - PIO (2021-2022)</li>
+                            <li>Awarded With High Honors - Grade 11 (2021-2022)</li>
+                            <li>National Science and Technology Week 2021: DOST PHIVOLCS Talk Series Participant (2021)</li>
+                            <li>Active Class Officer (2021-2023)</li>
+                        </div>
+                    </div>
+                    <div class="row m-5">
+                        <h1 style="font-size: 36px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;">JUNIOR HIGH SCHOOL</h1>
+                        <div class="mx-5" style="font-size: 20px;">
+                            <li>Graduated With Honors - Grade 10 (2020-2021)</li>
+                            <li>Campus Ministry Representative (2018-2020)</li>
+                            <li>Saint Joseph Marello Awardee</li>
+                            <li>School Publication - Editorial Cartoonist (2018)</li>
+                            <li>Active Class Officer (2017-2019)</li>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -787,12 +797,12 @@
          <div class="container-fluid bg-light py-3" id="contactList">
             <div class="container text-center">
                 <div class="d-flex justify-content-center gap-4">
-                    <a href="https://facebook.com/johannesemmanuel.claus" class="text-decoration-none text-dark"><i class="bi bi-facebook fs-2"></i></a>
-                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-threads fs-2"></i></a>
-                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-instagram fs-2"></i></a>
-                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-tiktok fs-2"></i></a>
-                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-youtube fs-2"></i></a>
-                    <a href="" class="text-decoration-none text-dark"><i class="bi bi-github fs-2"></i></a>
+                    <a href="https://facebook.com/johannescls" class="text-decoration-none text-dark"><i class="bi bi-facebook fs-2"></i></a>
+                    <a href="https://www.threads.com/@johannescls" class="text-decoration-none text-dark"><i class="bi bi-threads fs-2"></i></a>
+                    <a href="https://www.instagram.com/johannescls" class="text-decoration-none text-dark"><i class="bi bi-instagram fs-2"></i></a>
+                    <a href="https://www.tiktok.com/@johannescls_" class="text-decoration-none text-dark"><i class="bi bi-tiktok fs-2"></i></a>
+                    <a href="https://www.youtube.com/@johannescls" class="text-decoration-none text-dark"><i class="bi bi-youtube fs-2"></i></a>
+                    <a href="https://www.github.com/johannesclaus30" class="text-decoration-none text-dark"><i class="bi bi-github fs-2"></i></a>
                 </div>
             </div>
          </div>
@@ -1084,6 +1094,29 @@
             // Optionally, reset the form
             document.getElementById("contactForm").reset();
         }
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const image = document.getElementById("slideLeftImage");
+
+        // Create an Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the slide-left class when the image is in view
+                    image.classList.add("slide-left");
+
+                    // Stop observing once the class is added
+                    observer.unobserve(image);
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the image is visible
+        });
+
+        // Observe the image
+        observer.observe(image);
     });
 </script>
     </body>
